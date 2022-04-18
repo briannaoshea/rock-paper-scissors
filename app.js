@@ -15,6 +15,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     yourChoiceDisplay.innerHTML = userChoice
     //run the function to randomly give computer choice
     generateComputerChoice()
+    getResult()
 }))
 
 //function to randomly generate computer's choice
@@ -37,4 +38,21 @@ function generateComputerChoice() {
 
     computerChoiceDisplay.innerHTML = computerChoice
 }
+
+
+function getResult () {
+
+    if (computerChoice === userChoice) {
+        finalResult = 'it\'s a draw'
+    } else if (computerChoice === 'rock' && userChoice === 'scissors') {
+        finalResult = 'computer wins'
+    } else if (computerChoice === 'paper' && userChoice === 'rock') {
+        finalResult = 'computer wins'
+    } else if (computerChoice === 'scissors' && userChoice === 'paper') {
+        finalResult = 'computer wins'
+    } else { 
+        finalResult = 'you win'
+    }
+
+    resultDisplay.innerHTML = finalResult
 }
