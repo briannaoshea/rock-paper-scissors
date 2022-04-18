@@ -11,7 +11,7 @@ let finalResult
 //if you click any of the buttons, something will happen
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     //function to be executed when button clicked
-    userChoice = e.target.id
+    userChoice = e.target.getAttribute('id')
     yourChoiceDisplay.innerHTML = userChoice
     //run the function to randomly give computer choice
     generateComputerChoice()
@@ -27,32 +27,29 @@ function generateComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3) + 1 
 
     if (randomNumber === 1) {
-        computerChoice = 'rock'
+        computerChoice = 'Rock'
     }
     if (randomNumber === 2) {
-        computerChoice = 'paper'
+        computerChoice = 'Paper'
     }
     if (randomNumber === 3) {
-        computerChoice = 'scissors'
+        computerChoice = 'Scissors'
     }
-
     computerChoiceDisplay.innerHTML = computerChoice
 }
 
 
 function getResult () {
-
     if (computerChoice === userChoice) {
-        finalResult = 'it\'s a draw'
-    } else if (computerChoice === 'rock' && userChoice === 'scissors') {
-        finalResult = 'computer wins'
-    } else if (computerChoice === 'paper' && userChoice === 'rock') {
-        finalResult = 'computer wins'
-    } else if (computerChoice === 'scissors' && userChoice === 'paper') {
-        finalResult = 'computer wins'
+        finalResult = 'It\'s a draw'
+    } else if (userChoice === 'Rock' && computerChoice === 'Scissors') {
+        finalResult = 'You Win'
+    } else if (userChoice === 'Paper' && computerChoice === 'Rock') {
+        finalResult = 'You Win'
+    } else if (userChoice === 'Scissors' && computerChoice === 'Paper') {
+        finalResult = 'You Win'
     } else { 
-        finalResult = 'you win'
+        finalResult = 'Computer Wins'
     }
-
     resultDisplay.innerHTML = finalResult
 }

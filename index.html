@@ -4,18 +4,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
         <title>Rock! Paper! Scissors!</title>
     </head>
     <!--body--> 
     <body>
         <!--html-->
-        <h2>Computer Choice: <span id="computer-choice"></span></h2>
-        <h2>Your Choice: <span id="your-choice"></span></h2>
-        <h2>Result: <span id="result"></span></h2>
+        <div id="main-section">
+            <div id="display-choice">
+                <h2>Computer Choice: <span id="computer-choice"></span></h2>
+                <h2>Your Choice: <span id="your-choice"></span></h2>
+                <h2>Result: <span id="result"></span></h2>
+            </div>
 
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+            <div id="button-container">
+                <button id="Rock" class="button">Rock</button>
+                <button id="Paper" class="button">Paper</button>
+                <button id="Scissors" class="button">Scissors</button>
+            </div>
+        </div>
         <!--script tag-->
         <script src="app.js" charset="utf-8"></script>
     </body>
